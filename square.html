@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Обчислення параметрів квадрата</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script language="javascript">
+        function rez(a) {
+            var area = (a.value * a.value).toFixed(2);
+            var perimeter = (4 * a.value).toFixed(2);
+            var diagonal = (a.value * Math.sqrt(2)).toFixed(2);
+            var inCircleRadius = (a.value / 2).toFixed(2);
+            var outCircleRadius = (a.value * Math.sqrt(2) / 2).toFixed(2);
+
+            form1.rezArea.value = area;
+            form1.rezPerimeter.value = perimeter;
+            form1.rezDiagonal.value = diagonal;
+            form1.rezInCircleRadius.value = inCircleRadius;
+            form1.rezOutCircleRadius.value = outCircleRadius;
+        }
+    </script>
+</head>
+<body>
+    <p>Обчислення параметрів квадрата</p>
+    <form name="form1">
+        <fieldset style="width: 40%">
+            <legend>Введення даних</legend>
+            Сторона квадрата: <input type="text" size=7 name="side">
+            <br>
+        </fieldset>
+        <fieldset style="width: 60%">
+            <legend>Обробка та виведення даних</legend>
+            Площа: <input type="text" size=7 name="rezArea" readonly> <br>
+            Периметр: <input type="text" size=7 name="rezPerimeter" readonly> <br>
+            Діагональ: <input type="text" size=7 name="rezDiagonal" readonly> <br>
+            Радіус вписаного кола: <input type="text" size=7 name="rezInCircleRadius" readonly> <br>
+            Радіус описаного кола: <input type="text" size=7 name="rezOutCircleRadius" readonly> <br>
+            <input type="button" value="Обчислити" style="margin:10px" onClick="rez(form1.side)">
+        </fieldset>
+        <img src="square.png" alt="Зображення квадрата" style="margin-top: 20px;">
+    </form>
+</body>
+</html>
